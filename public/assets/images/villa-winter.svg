@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="winterSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#93a5b8"/>
+      <stop offset="60%" stop-color="#b8c6d4"/>
+      <stop offset="100%" stop-color="#dbe3ec"/>
+    </linearGradient>
+    <linearGradient id="snowGround" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#edf2f7"/>
+      <stop offset="100%" stop-color="#c9d6e4"/>
+    </linearGradient>
+    <linearGradient id="snowRoof" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#d1dbe6"/>
+    </linearGradient>
+    <linearGradient id="villaWallWinter" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#242830"/>
+      <stop offset="100%" stop-color="#343a46"/>
+    </linearGradient>
+    <linearGradient id="windowWinter" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4a5568"/>
+      <stop offset="100%" stop-color="#2d3748"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="1200" height="675" fill="url(#winterSky)"/>
+
+  <!-- Distant Winter Pine Trees & Frost -->
+  <path d="M0 380 Q 200 360 400 375 T 800 365 T 1200 380 L 1200 675 L 0 675 Z" fill="#64748b" opacity="0.4"/>
+  <path d="M40 370 L 60 300 L 80 370 Z M90 380 L 110 310 L 130 380 Z M150 375 L 170 290 L 190 375 Z M1000 370 L 1025 280 L 1050 370 Z M1080 380 L 1105 310 L 1130 380 Z" fill="#475569"/>
+
+  <!-- Snow Ground -->
+  <path d="M0 420 Q 300 390 600 410 T 1200 400 L 1200 675 L 0 675 Z" fill="url(#snowGround)"/>
+
+  <!-- Snow Drifts -->
+  <path d="M0 500 Q 350 470 700 510 T 1200 490 L 1200 675 L 0 675 Z" fill="#ffffff" opacity="0.7"/>
+
+  <!-- Modern Luxury Villa -->
+  <!-- Main Building Body -->
+  <polygon points="320,240 760,200 760,460 320,480" fill="url(#villaWallWinter)"/>
+  
+  <!-- Upper Floor Wing -->
+  <polygon points="560,140 920,110 920,330 560,350" fill="#1e222b"/>
+  
+  <!-- Snow on Roofs -->
+  <polygon points="300,240 780,195 760,180 280,225" fill="url(#snowRoof)"/>
+  <polygon points="540,140 940,105 920,90 520,125" fill="url(#snowRoof)"/>
+  
+  <!-- Overhanging Snow Accents -->
+  <path d="M280 225 Q 350 235 420 220 Q 500 230 600 215 Q 700 225 780 195 L 775 205 Q 695 233 595 223 Q 495 238 415 228 Q 345 243 280 233 Z" fill="#ffffff"/>
+
+  <!-- Large Panoramic Windows -->
+  <polygon points="360,280 500,270 500,440 360,450" fill="url(#windowWinter)" stroke="#1a202c" stroke-width="4"/>
+  <polygon points="520,270 720,250 720,430 520,440" fill="url(#windowWinter)" stroke="#1a202c" stroke-width="4"/>
+  <polygon points="600,160 880,135 880,310 600,330" fill="url(#windowWinter)" stroke="#1a202c" stroke-width="4"/>
+  
+  <!-- Subtle cold reflection on glass -->
+  <polygon points="360,280 430,275 410,447 360,450" fill="#ffffff" opacity="0.15"/>
+  <polygon points="600,160 700,150 670,325 600,330" fill="#ffffff" opacity="0.12"/>
+
+  <!-- Bare Winter Tree with Snow -->
+  <g stroke="#2d3748" stroke-width="4" stroke-linecap="round">
+    <line x1="220" y1="520" x2="220" y2="340"/>
+    <line x1="220" y1="420" x2="170" y2="360"/>
+    <line x1="220" y1="390" x2="270" y2="330"/>
+    <line x1="170" y1="360" x2="140" y2="330"/>
+    <line x1="270" y1="330" x2="300" y2="300"/>
+  </g>
+  <!-- Snow on branches -->
+  <path d="M165 358 Q 195 385 220 416" stroke="#ffffff" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <path d="M220 386 Q 245 355 270 326" stroke="#ffffff" stroke-width="5" stroke-linecap="round" fill="none"/>
+
+  <!-- Frozen Pool / Patio with snow -->
+  <polygon points="400,510 880,480 980,590 320,630" fill="#cbd5e1" stroke="#94a3b8" stroke-width="2"/>
+  <polygon points="450,525 840,500 910,575 390,605" fill="#a0aec0" opacity="0.8"/>
+  <text x="600" y="560" font-family="-apple-system, sans-serif" font-size="14" fill="#475569" text-anchor="middle" letter-spacing="2">TÄCKT POOL &amp; SNÖ</text>
+
+  <!-- Badge Overlay -->
+  <rect x="40" y="40" width="180" height="42" rx="21" fill="rgba(15, 23, 42, 0.75)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <circle cx="62" cy="61" r="6" fill="#60a5fa"/>
+  <text x="80" y="66" font-family="-apple-system, sans-serif" font-size="15" font-weight="600" fill="#f8fafc">FÖRE: VINTER</text>
+</svg>

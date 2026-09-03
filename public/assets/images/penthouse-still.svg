@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="pentBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1e2430"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="parquet" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c28847"/>
+      <stop offset="100%" stop-color="#8c5825"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#pentBg)"/>
+  <!-- Stucco ceiling & walls -->
+  <polygon points="0,0 1200,0 950,380 250,380" fill="#f8fafc"/>
+  <polygon points="0,0 250,380 0,675" fill="#e2e8f0"/>
+  <polygon points="1200,0 950,380 1200,675" fill="#e2e8f0"/>
+  <polygon points="0,675 250,380 950,380 1200,675" fill="url(#parquet)"/>
+
+  <!-- High Turn-of-century Windows -->
+  <rect x="380" y="50" width="180" height="300" rx="90" fill="#bae6fd" stroke="#475569" stroke-width="6"/>
+  <rect x="640" y="50" width="180" height="300" rx="90" fill="#bae6fd" stroke="#475569" stroke-width="6"/>
+
+  <!-- Living Room Furniture -->
+  <rect x="380" y="390" width="440" height="120" rx="20" fill="#1e293b"/>
+  <rect x="400" y="440" width="400" height="80" rx="14" fill="#334155"/>
+  <ellipse cx="600" cy="560" rx="150" ry="40" fill="#e2e8f0"/>
+
+  <!-- Camera Still Frame / Viewfinder Indicator -->
+  <rect x="40" y="40" width="220" height="42" rx="21" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <circle cx="62" cy="61" r="6" fill="#94a3b8"/>
+  <text x="80" y="66" font-family="-apple-system, sans-serif" font-size="15" font-weight="600" fill="#f8fafc">ORIGINAL STILLBILD</text>
+  
+  <text x="600" y="630" font-family="-apple-system, sans-serif" font-size="16" fill="#94a3b8" text-anchor="middle" letter-spacing="1.5">STATISKT FOTO (VANLIG MÄKLARBILD)</text>
+</svg>

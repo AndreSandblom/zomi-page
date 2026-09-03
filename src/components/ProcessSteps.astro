@@ -1,0 +1,96 @@
+---
+import { processSteps } from '../data/services';
+---
+
+<section class="process-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">
+        <span>Enkel Process</span>
+      </div>
+      <h2 class="section-title">
+        Så fungerar det i <span class="gradient-text">3 enkla steg</span>
+      </h2>
+      <p class="section-subtitle">
+        Ingen krånglig utrustning eller långa ledtider. Vi integreras sömlöst i era befintliga mäklarrutiner.
+      </p>
+    </div>
+
+    <div class="steps-grid">
+      {processSteps.map((step, index) => (
+        <div class="step-card glass-panel">
+          <div class="step-top">
+            <span class="step-num">{step.number}</span>
+            {index < processSteps.length - 1 && (
+              <div class="step-connector" aria-hidden="true"></div>
+            )}
+          </div>
+          <h3 class="step-title">{step.title}</h3>
+          <p class="step-desc">{step.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .process-section {
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-16);
+  }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-8);
+    position: relative;
+  }
+
+  .step-card {
+    padding: var(--space-8);
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--radius-xl);
+    position: relative;
+    transition: transform var(--transition-base);
+  }
+
+  .step-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(229, 179, 100, 0.35);
+  }
+
+  .step-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-5);
+  }
+
+  .step-num {
+    font-size: var(--text-3xl);
+    font-weight: 800;
+    color: var(--accent-gold);
+    line-height: 1;
+    font-family: var(--font-display);
+  }
+
+  .step-title {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-3);
+    color: var(--text-heading);
+  }
+
+  .step-desc {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 860px) {
+    .steps-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+    }
+  }
+</style>

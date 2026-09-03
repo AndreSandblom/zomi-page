@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="summerSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1d74d4"/>
+      <stop offset="45%" stop-color="#56a2f2"/>
+      <stop offset="100%" stop-color="#bae6fd"/>
+    </linearGradient>
+    <linearGradient id="summerLawn" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="40%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+    <linearGradient id="poolWater" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="50%" stop-color="#0891b2"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <linearGradient id="sunGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="woodAccent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#b45309"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <linearGradient id="villaWallSummer" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1e2430"/>
+      <stop offset="100%" stop-color="#2d3748"/>
+    </linearGradient>
+    <linearGradient id="windowSummer" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#67e8f9"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="1200" height="675" fill="url(#summerSky)"/>
+
+  <!-- Sun & Flare -->
+  <circle cx="1060" cy="110" r="60" fill="url(#sunGlow)"/>
+  <circle cx="1060" cy="110" r="140" fill="#fef08a" opacity="0.18"/>
+  <circle cx="1060" cy="110" r="240" fill="#fef08a" opacity="0.08"/>
+
+  <!-- Fluffy Summer Clouds -->
+  <path d="M120 160 Q 150 120 200 140 Q 240 100 290 130 Q 330 110 370 140 Q 400 160 380 180 Q 250 190 120 180 Z" fill="#ffffff" opacity="0.85"/>
+  <path d="M720 130 Q 750 90 800 110 Q 840 70 890 100 Q 930 80 970 110 Q 1000 130 980 150 Q 850 160 720 150 Z" fill="#ffffff" opacity="0.75"/>
+
+  <!-- Lush Distant Green Hills & Foliage -->
+  <path d="M0 370 Q 250 340 500 360 T 1000 345 T 1200 360 L 1200 675 L 0 675 Z" fill="#059669" opacity="0.6"/>
+  
+  <!-- Green Deciduous Trees in Background -->
+  <ellipse cx="60" cy="330" rx="45" ry="55" fill="#15803d"/>
+  <ellipse cx="110" cy="320" rx="55" ry="65" fill="#16a34a"/>
+  <ellipse cx="170" cy="335" rx="50" ry="50" fill="#22c55e"/>
+  <ellipse cx="980" cy="320" rx="60" ry="70" fill="#15803d"/>
+  <ellipse cx="1050" cy="310" rx="70" ry="80" fill="#16a34a"/>
+  <ellipse cx="1130" cy="330" rx="55" ry="60" fill="#22c55e"/>
+
+  <!-- Summer Green Lawn -->
+  <path d="M0 420 Q 300 390 600 410 T 1200 400 L 1200 675 L 0 675 Z" fill="url(#summerLawn)"/>
+
+  <!-- Modern Luxury Villa -->
+  <!-- Main Building Body -->
+  <polygon points="320,240 760,200 760,460 320,480" fill="url(#villaWallSummer)"/>
+  
+  <!-- Upper Floor Wing with Warm Wood Paneling -->
+  <polygon points="560,140 920,110 920,330 560,350" fill="url(#woodAccent)"/>
+  <line x1="560" y1="180" x2="920" y2="150" stroke="#78350f" stroke-width="1.5"/>
+  <line x1="560" y1="220" x2="920" y2="190" stroke="#78350f" stroke-width="1.5"/>
+  <line x1="560" y1="260" x2="920" y2="230" stroke="#78350f" stroke-width="1.5"/>
+  <line x1="560" y1="300" x2="920" y2="270" stroke="#78350f" stroke-width="1.5"/>
+  
+  <!-- Clean Modern Dark Zinc Roofs -->
+  <polygon points="300,240 780,195 760,185 280,230" fill="#0f172a"/>
+  <polygon points="540,140 940,105 920,95 520,130" fill="#0f172a"/>
+
+  <!-- Large Panoramic Windows with Summer Sky & Interior Reflection -->
+  <polygon points="360,280 500,270 500,440 360,450" fill="url(#windowSummer)" stroke="#0f172a" stroke-width="4"/>
+  <polygon points="520,270 720,250 720,430 520,440" fill="url(#windowSummer)" stroke="#0f172a" stroke-width="4"/>
+  <polygon points="600,160 880,135 880,310 600,330" fill="url(#windowSummer)" stroke="#0f172a" stroke-width="4"/>
+  
+  <!-- Sun reflections across glass -->
+  <polygon points="360,280 430,275 400,448 360,450" fill="#ffffff" opacity="0.35"/>
+  <polygon points="600,160 700,150 660,326 600,330" fill="#ffffff" opacity="0.3"/>
+
+  <!-- Blooming Summer Tree in Foreground -->
+  <g stroke="#78350f" stroke-width="6" stroke-linecap="round">
+    <line x1="220" y1="520" x2="220" y2="340"/>
+    <line x1="220" y1="420" x2="170" y2="360"/>
+    <line x1="220" y1="390" x2="270" y2="330"/>
+  </g>
+  <ellipse cx="220" cy="300" rx="75" ry="85" fill="#22c55e"/>
+  <ellipse cx="170" cy="340" rx="55" ry="60" fill="#16a34a"/>
+  <ellipse cx="270" cy="320" rx="55" ry="60" fill="#4ade80"/>
+  <circle cx="210" cy="270" r="7" fill="#f43f5e"/>
+  <circle cx="250" cy="310" r="6" fill="#f43f5e"/>
+  <circle cx="160" cy="330" r="6" fill="#f43f5e"/>
+
+  <!-- Sparkling Heated Swimming Pool & Wooden Deck -->
+  <polygon points="400,510 880,480 980,590 320,630" fill="#d97706" stroke="#b45309" stroke-width="3"/>
+  <!-- Pool Basin & Water -->
+  <polygon points="450,525 840,500 910,575 390,605" fill="url(#poolWater)"/>
+  
+  <!-- Pool Ripples & Highlights -->
+  <path d="M470 540 Q 640 520 820 515 M430 565 Q 650 545 860 540 M410 585 Q 640 570 890 560" stroke="#a5f3fc" stroke-width="2" fill="none" opacity="0.75"/>
+
+  <!-- Deckchairs & Parasol -->
+  <path d="M870 480 L 890 440 L 930 485 Z" fill="#ffffff" stroke="#f59e0b" stroke-width="2"/>
+  <line x1="900" y1="440" x2="900" y2="500" stroke="#78350f" stroke-width="2.5"/>
+
+  <!-- Badge Overlay -->
+  <rect x="40" y="40" width="190" height="42" rx="21" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(245, 158, 11, 0.4)" stroke-width="1.5"/>
+  <circle cx="62" cy="61" r="6" fill="#f59e0b"/>
+  <text x="80" y="66" font-family="-apple-system, sans-serif" font-size="15" font-weight="600" fill="#fef08a">EFTER: AI-SOMMAR</text>
+</svg>

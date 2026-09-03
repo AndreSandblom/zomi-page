@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zomimedia.se/sitemap.xml

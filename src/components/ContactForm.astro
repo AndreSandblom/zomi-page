@@ -1,0 +1,271 @@
+---
+import { siteConfig } from '../data/siteConfig';
+---
+
+<section class="contact-section" id="kontakt">
+  <div class="container container-narrow">
+    <div class="section-header">
+      <div class="section-badge">
+        <span>Kontakta Oss / Boka Test</span>
+      </div>
+      <h2 class="section-title">
+        Få ett kostnadsfritt <span class="gradient-text">smakprov</span>
+      </h2>
+      <p class="section-subtitle">
+        Skicka in en av era mäklarbilder så genererar vi ett gratis testprov på en videorundtur eller ett säsongsbyte. Ingen bindningstid.
+      </p>
+    </div>
+
+    <div class="contact-card glass-panel">
+      <!-- Direct Contact Info Banner -->
+      <div class="contact-info-banner">
+        <div class="ci-item">
+          <span class="ci-label">Direkt e-post</span>
+          <a href={`mailto:${siteConfig.email}`} class="ci-link">{siteConfig.email}</a>
+        </div>
+        <div class="ci-item">
+          <span class="ci-label">Telefon</span>
+          <a href={`tel:${siteConfig.phone.replace(/\s+/g, '')}`} class="ci-link">{siteConfig.phone}</a>
+        </div>
+        <div class="ci-item">
+          <span class="ci-label">Svarstid</span>
+          <span class="ci-val">Inom 2 timmar (vardagar)</span>
+        </div>
+      </div>
+
+      <!-- Form Element -->
+      <form class="booking-form" id="contact-form">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="name" class="form-label">Ditt namn *</label>
+            <input type="text" id="name" name="name" class="form-input" placeholder="För- och efternamn" required />
+          </div>
+
+          <div class="form-group">
+            <label for="agency" class="form-label">Mäklarbyrå / Kontor *</label>
+            <input type="text" id="agency" name="agency" class="form-input" placeholder="t.ex. Fastighetsbyrån Vasastan" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="form-label">E-postadress *</label>
+            <input type="email" id="email" name="email" class="form-input" placeholder="namn@maklarbyra.se" required />
+          </div>
+
+          <div class="form-group">
+            <label for="phone" class="form-label">Telefonnummer</label>
+            <input type="tel" id="phone" name="phone" class="form-input" placeholder="070-123 45 67" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="service-type" class="form-label">Vad är du mest intresserad av?</label>
+          <select id="service-type" name="service" class="form-select">
+            <option value="video-tour">AI-Videorundtur från stillbilder (Huvudtjänst)</option>
+            <option value="season-change">Säsongs- &amp; Miljöbyte (Snö till Sol)</option>
+            <option value="twilight">Golden Hour / Skymningsbelysning</option>
+            <option value="staging">Virtuell Homestaging</option>
+            <option value="all-in-one">Helhetslösning / Flera objekt</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message" class="form-label">Meddelande / Länk till objekt eller bilder</label>
+          <textarea id="message" name="message" rows="4" class="form-textarea" placeholder="Klistra in länk till Hemnet/Dropbox/bilder, eller beskriv ert behov..."></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary btn-lg" id="submit-btn" style="width: 100%;">
+            <span>Skicka förfrågan / Boka testprov</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+          </button>
+        </div>
+
+        <!-- Success Message Notice (hidden by default) -->
+        <div class="form-success-message" id="form-success" style="display: none;">
+          <div class="success-icon">✓</div>
+          <div>
+            <h4 class="success-title">Tack för din förfrågan!</h4>
+            <p class="success-desc">Vi har mottagit dina uppgifter och återkommer till dig inom kort med information och eventuellt testmaterial.</p>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const successBox = document.getElementById('form-success');
+  const submitBtn = document.getElementById('submit-btn');
+
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (submitBtn) {
+      submitBtn.setAttribute('disabled', 'true');
+      submitBtn.innerHTML = '<span>Skickar...</span>';
+    }
+
+    // Simulate fast local response for static hosting
+    setTimeout(() => {
+      form.reset();
+      if (submitBtn) submitBtn.style.display = 'none';
+      if (successBox) successBox.style.display = 'flex';
+    }, 600);
+  });
+</script>
+
+<style>
+  .contact-section {
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-20);
+    position: relative;
+  }
+
+  .contact-card {
+    padding: var(--space-10);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border-medium);
+  }
+
+  /* Info Banner */
+  .contact-info-banner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+    padding-bottom: var(--space-8);
+    margin-bottom: var(--space-8);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .ci-item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ci-label {
+    font-size: var(--text-xs);
+    color: var(--text-subtle);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: var(--space-1);
+  }
+
+  .ci-link, .ci-val {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--text-heading);
+  }
+
+  .ci-link:hover {
+    color: var(--accent-gold);
+  }
+
+  /* Form */
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-5);
+    margin-bottom: var(--space-5);
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: var(--space-5);
+  }
+
+  .form-label {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--text-heading);
+    margin-bottom: var(--space-2);
+  }
+
+  .form-input, .form-select, .form-textarea {
+    width: 100%;
+    padding: 0.85rem 1.15rem;
+    background: rgba(14, 16, 22, 0.8);
+    border: 1px solid var(--border-medium);
+    border-radius: var(--radius-md);
+    color: var(--text-heading);
+    font-size: var(--text-sm);
+    transition: all var(--transition-fast);
+  }
+
+  .form-input:focus, .form-select:focus, .form-textarea:focus {
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 0 3px var(--accent-gold-glow);
+    outline: none;
+    background: rgba(20, 24, 32, 0.95);
+  }
+
+  .form-select {
+    cursor: pointer;
+  }
+
+  .form-select option {
+    background: #111319;
+    color: #ffffff;
+  }
+
+  .form-textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+
+  .form-actions {
+    margin-top: var(--space-6);
+  }
+
+  /* Success Notice */
+  .form-success-message {
+    margin-top: var(--space-6);
+    padding: var(--space-5);
+    background: rgba(45, 212, 191, 0.1);
+    border: 1px solid rgba(45, 212, 191, 0.3);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+  }
+
+  .success-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--accent-teal);
+    color: #090a0d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .success-title {
+    font-size: var(--text-base);
+    color: #ffffff;
+    margin-bottom: 2px;
+  }
+
+  .success-desc {
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+  }
+
+  @media (max-width: 640px) {
+    .contact-info-banner {
+      grid-template-columns: 1fr;
+      gap: var(--space-4);
+    }
+
+    .form-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .contact-card {
+      padding: var(--space-6);
+    }
+  }
+</style>

@@ -1,0 +1,205 @@
+---
+import { siteConfig } from '../data/siteConfig';
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="brand-logo">
+          <span class="brand-text">ZoMi <span class="brand-accent">Media</span></span>
+        </a>
+        <p class="brand-desc">
+          Vi lyfter fastighetsannonser genom att förvandla statiska mäklarbilder till cinematiska AI-videorundturer och skapa magiska säsongsförvandlingar.
+        </p>
+        <div class="footer-badges">
+          <span class="mini-badge">Leverans 24–48h</span>
+          <span class="mini-badge">Hemnet &amp; Reels</span>
+          <span class="mini-badge">Fotorealistisk AI</span>
+        </div>
+      </div>
+
+      <div class="footer-nav">
+        <h4 class="footer-heading">Navigation</h4>
+        <ul>
+          {siteConfig.navItems.map((item) => (
+            <li>
+              <a href={item.href} class="footer-link">{item.label}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="footer-services">
+        <h4 class="footer-heading">Tjänster</h4>
+        <ul>
+          <li><a href="/tjanster#video-tours" class="footer-link">AI-Videorundturer</a></li>
+          <li><a href="/tjanster#season-transform" class="footer-link">Säsongsbyte (Snö till Sol)</a></li>
+          <li><a href="/tjanster#season-transform" class="footer-link">Golden Hour &amp; Skymning</a></li>
+          <li><a href="/tjanster#virtual-staging" class="footer-link">Virtuell Homestaging</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4 class="footer-heading">Kontakt &amp; Demo</h4>
+        <p class="contact-item">
+          <span class="contact-label">E-post:</span>
+          <a href={`mailto:${siteConfig.email}`} class="footer-link contact-val">{siteConfig.email}</a>
+        </p>
+        <p class="contact-item">
+          <span class="contact-label">Telefon:</span>
+          <a href={`tel:${siteConfig.phone.replace(/\s+/g, '')}`} class="footer-link contact-val">{siteConfig.phone}</a>
+        </p>
+        <p class="contact-item">
+          <span class="contact-label">Plats:</span>
+          <span class="contact-val">{siteConfig.location}</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="copyright">
+        &copy; {new Date().getFullYear()} {siteConfig.name}. Alla rättigheter förbehållna. Byggd för fastighetsmäklare med högsta krav på visuell kvalitet.
+      </p>
+      <div class="footer-meta-links">
+        <a href="/tjanster#kontakt" class="footer-meta-link">Boka gratis testbild</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-subtle);
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-8);
+    margin-top: auto;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: var(--space-10);
+    padding-bottom: var(--space-12);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .footer-brand {
+    max-width: 360px;
+  }
+
+  .brand-logo {
+    display: inline-block;
+    font-size: var(--text-xl);
+    font-weight: 700;
+    margin-bottom: var(--space-3);
+  }
+
+  .brand-text { color: var(--text-heading); }
+  .brand-accent { color: var(--accent-gold); }
+
+  .brand-desc {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    margin-bottom: var(--space-4);
+    line-height: 1.6;
+  }
+
+  .footer-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  .mini-badge {
+    font-size: var(--text-xs);
+    padding: 0.2rem 0.65rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-full);
+    color: var(--text-muted);
+  }
+
+  .footer-heading {
+    font-size: var(--text-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-heading);
+    margin-bottom: var(--space-4);
+  }
+
+  .footer-nav ul,
+  .footer-services ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .footer-link {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    transition: color var(--transition-fast);
+  }
+
+  .footer-link:hover {
+    color: var(--accent-gold);
+  }
+
+  .contact-item {
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-2);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-label {
+    color: var(--text-subtle);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .contact-val {
+    color: var(--text-main);
+  }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--space-8);
+    flex-wrap: wrap;
+    gap: var(--space-4);
+  }
+
+  .copyright {
+    font-size: var(--text-xs);
+    color: var(--text-subtle);
+  }
+
+  .footer-meta-link {
+    font-size: var(--text-xs);
+    color: var(--accent-gold);
+    font-weight: 500;
+  }
+
+  .footer-meta-link:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 960px) {
+    .footer-top {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-8);
+    }
+  }
+
+  @media (max-width: 560px) {
+    .footer-top {
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+    }
+  }
+</style>

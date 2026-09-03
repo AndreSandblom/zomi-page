@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="pentBgTour" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <linearGradient id="parquetWarm" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#92400e"/>
+    </linearGradient>
+    <linearGradient id="sunStream" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fef08a" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#pentBgTour)"/>
+  
+  <!-- Zoomed / Panned Perspective (Cinematic Camera Push-in) -->
+  <polygon points="-50,-30 1250,-30 1020,400 180,400" fill="#f8fafc"/>
+  <polygon points="-50,-30 180,400 -50,710" fill="#f1f5f9"/>
+  <polygon points="1250,-30 1020,400 1250,710" fill="#f1f5f9"/>
+  <polygon points="-50,710 180,400 1020,400 1250,710" fill="url(#parquetWarm)"/>
+
+  <!-- High Windows with Dynamic Golden Sun Rays Streaming In -->
+  <rect x="340" y="30" width="220" height="340" rx="110" fill="#38bdf8" stroke="#0f172a" stroke-width="6"/>
+  <rect x="640" y="30" width="220" height="340" rx="110" fill="#38bdf8" stroke="#0f172a" stroke-width="6"/>
+  <!-- Sun Rays -->
+  <polygon points="450,80 560,80 850,680 550,680" fill="url(#sunStream)"/>
+  <polygon points="750,80 860,80 1150,680 850,680" fill="url(#sunStream)"/>
+
+  <!-- Furniture with motion blur highlights -->
+  <rect x="350" y="380" width="500" height="140" rx="24" fill="#0f172a"/>
+  <rect x="370" y="440" width="460" height="90" rx="16" fill="#1e293b"/>
+  <ellipse cx="600" cy="580" rx="180" ry="45" fill="#fef08a" opacity="0.3"/>
+
+  <!-- Motion Trails / Camera Sweep Guides -->
+  <path d="M150 480 Q 600 520 1050 480" stroke="#38bdf8" stroke-width="2" stroke-dasharray="8 8" fill="none" opacity="0.7"/>
+  <path d="M200 300 Q 600 340 1000 300" stroke="#e5b364" stroke-width="2" stroke-dasharray="12 6" fill="none" opacity="0.7"/>
+
+  <!-- Cinematic 2.35:1 Letterbox Overlays -->
+  <rect width="1200" height="28" fill="#090a0d"/>
+  <rect y="647" width="1200" height="28" fill="#090a0d"/>
+
+  <!-- Video Play / Rec Indicator -->
+  <rect x="40" y="46" width="240" height="42" rx="21" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(229,179,100,0.4)" stroke-width="1.5"/>
+  <circle cx="62" cy="67" r="6" fill="#ef4444"/>
+  <text x="80" y="72" font-family="-apple-system, sans-serif" font-size="15" font-weight="600" fill="#e5b364">AI-VIDEORUNDTUR 4K</text>
+  
+  <!-- Center Play / Interactive Overlay Button -->
+  <circle cx="600" cy="337" r="48" fill="rgba(9, 10, 13, 0.75)" stroke="#e5b364" stroke-width="3"/>
+  <polygon points="590,317 622,337 590,357" fill="#e5b364"/>
+
+  <!-- Progress Bar at bottom -->
+  <rect x="100" y="620" width="1000" height="6" rx="3" fill="rgba(255,255,255,0.2)"/>
+  <rect x="100" y="620" width="580" height="6" rx="3" fill="#e5b364"/>
+  <circle cx="680" cy="623" r="8" fill="#e5b364"/>
+  <text x="100" y="605" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#ffffff">00:24 / 00:45</text>
+  <text x="1100" y="605" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#e5b364" text-anchor="end">4K 60FPS • DOLLY SMOOTH</text>
+</svg>

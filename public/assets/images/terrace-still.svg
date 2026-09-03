@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="terraceSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#bae6fd"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#terraceSky)"/>
+  <!-- City Skyline in Distance -->
+  <rect x="100" y="300" width="80" height="200" fill="#64748b"/>
+  <rect x="220" y="240" width="110" height="260" fill="#475569"/>
+  <rect x="360" y="280" width="90" height="220" fill="#64748b"/>
+  <rect x="750" y="260" width="120" height="240" fill="#475569"/>
+  <rect x="900" y="290" width="100" height="210" fill="#64748b"/>
+  <!-- Terrace Glass Railing & Decking -->
+  <rect y="440" width="1200" height="235" fill="#78350f"/>
+  <rect y="380" width="1200" height="60" fill="#38bdf8" opacity="0.3" stroke="#ffffff" stroke-width="2"/>
+  <!-- Outdoor Lounge Set -->
+  <rect x="450" y="460" width="300" height="90" rx="12" fill="#1e293b"/>
+  <!-- Badge -->
+  <rect x="40" y="40" width="200" height="42" rx="21" fill="rgba(15, 23, 42, 0.85)"/>
+  <text x="55" y="66" font-family="-apple-system, sans-serif" font-size="14" font-weight="600" fill="#cbd5e1">FÖRE: STATISKT FOTO</text>
+</svg>

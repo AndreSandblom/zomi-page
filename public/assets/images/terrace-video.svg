@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="terraceVideoSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="60%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#fef08a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#terraceVideoSky)"/>
+  <!-- Sun & city glow -->
+  <circle cx="950" cy="180" r="70" fill="#f59e0b" opacity="0.8"/>
+  <circle cx="950" cy="180" r="150" fill="#fef08a" opacity="0.2"/>
+  <!-- Panned perspective of rooftop -->
+  <rect x="50" y="240" width="100" height="260" fill="#334155"/>
+  <rect x="200" y="190" width="140" height="310" fill="#1e293b"/>
+  <rect x="400" y="250" width="110" height="250" fill="#334155"/>
+  <!-- Terrace Deck & Glass Railing -->
+  <polygon points="0,420 1200,380 1200,675 0,675" fill="#92400e"/>
+  <polygon points="0,350 1200,310 1200,380 0,420" fill="#bae6fd" opacity="0.4" stroke="#ffffff" stroke-width="2"/>
+  <!-- Modern Lounge with fire pit -->
+  <rect x="400" y="440" width="400" height="110" rx="16" fill="#0f172a"/>
+  <circle cx="600" cy="580" r="35" fill="#451a03"/>
+  <circle cx="600" cy="580" r="20" fill="#f59e0b"/>
+  <circle cx="600" cy="580" r="10" fill="#ffffff"/>
+  <!-- Play Indicator -->
+  <circle cx="600" cy="337" r="45" fill="rgba(9,10,13,0.8)" stroke="#e5b364" stroke-width="3"/>
+  <polygon points="592,319 618,337 592,355" fill="#e5b364"/>
+  <!-- Badge -->
+  <rect x="40" y="40" width="220" height="42" rx="21" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(229,179,100,0.4)" stroke-width="1.5"/>
+  <circle cx="62" cy="61" r="6" fill="#e5b364"/>
+  <text x="80" y="66" font-family="-apple-system, sans-serif" font-size="14" font-weight="600" fill="#e5b364">AI-VIDEORUNDTUR 4K</text>
+</svg>

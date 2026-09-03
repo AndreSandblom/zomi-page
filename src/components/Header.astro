@@ -1,0 +1,332 @@
+---
+import { siteConfig } from '../data/siteConfig';
+
+interface Props {
+  currentPath?: string;
+}
+
+const { currentPath = Astro.url.pathname } = Astro.props;
+
+const isActive = (path: string) => {
+  if (path === '/' && currentPath === '/') return true;
+  if (path !== '/' && (currentPath === path || currentPath.startsWith(`${path}/`))) return true;
+  return false;
+};
+---
+
+<header class="site-header" id="site-header">
+  <div class="container header-container">
+    <a href="/" class="brand-logo" aria-label="ZoMi Media Hem">
+      <span class="logo-icon">
+        <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="32" height="32" rx="8" fill="#181b23" stroke="rgba(229,179,100,0.3)" stroke-width="1.5"/>
+          <path d="M9 10H23L12 22H23" stroke="url(#logoGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="22" cy="11" r="1.5" fill="#e5b364"/>
+          <defs>
+            <linearGradient id="logoGrad" x1="9" y1="10" x2="23" y2="22" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#e5b364"/>
+              <stop offset="1" stop-color="#38bdf8"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </span>
+      <span class="brand-text">ZoMi <span class="brand-accent">Media</span></span>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="desktop-nav" aria-label="Huvudnavigation">
+      <ul class="nav-list">
+        {siteConfig.navItems.map((item) => (
+          <li>
+            <a 
+              href={item.href} 
+              class:list={['nav-link', { active: isActive(item.href) }]}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <!-- Header Actions -->
+    <div class="header-actions">
+      <a href="/tjanster#kontakt" class="btn btn-primary btn-sm">
+        <span>Testa med er bild</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button class="mobile-menu-btn" id="mobile-toggle" aria-label="Öppna navigationsmeny" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobile-drawer">
+    <div class="mobile-drawer-content">
+      <nav class="mobile-nav">
+        <ul>
+          {siteConfig.navItems.map((item) => (
+            <li>
+              <a 
+                href={item.href} 
+                class:list={['mobile-nav-link', { active: isActive(item.href) }]}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+      <div class="mobile-drawer-cta">
+        <a href="/tjanster#kontakt" class="btn btn-primary btn-lg" style="width: 100%;">
+          Testa med er bild
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const header = document.getElementById('site-header');
+  const toggleBtn = document.getElementById('mobile-toggle');
+  const drawer = document.getElementById('mobile-drawer');
+  const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+  // Scroll effect on header
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+      header?.classList.add('scrolled');
+    } else {
+      header?.classList.remove('scrolled');
+    }
+  });
+
+  // Mobile menu toggle
+  toggleBtn?.addEventListener('click', () => {
+    const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+    toggleBtn.setAttribute('aria-expanded', String(!isExpanded));
+    toggleBtn.classList.toggle('open');
+    drawer?.classList.toggle('open');
+    document.body.classList.toggle('menu-open');
+  });
+
+  // Close mobile menu on link click
+  mobileLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      toggleBtn?.setAttribute('aria-expanded', 'false');
+      toggleBtn?.classList.remove('open');
+      drawer?.classList.remove('open');
+      document.body.classList.remove('menu-open');
+    });
+  });
+</script>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    z-index: 1000;
+    background: rgba(9, 10, 13, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border-subtle);
+    transition: all var(--transition-base);
+  }
+
+  .site-header.scrolled {
+    background: rgba(9, 10, 13, 0.92);
+    border-bottom-color: var(--border-medium);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .brand-logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    font-weight: 700;
+    font-size: var(--text-lg);
+    letter-spacing: -0.01em;
+  }
+
+  .logo-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform var(--transition-base);
+  }
+
+  .brand-logo:hover .logo-icon {
+    transform: scale(1.05);
+  }
+
+  .brand-text {
+    color: var(--text-heading);
+  }
+
+  .brand-accent {
+    color: var(--accent-gold);
+  }
+
+  /* Desktop Nav */
+  .desktop-nav {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-list {
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+    list-style: none;
+  }
+
+  .nav-link {
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    padding: var(--space-2) 0;
+    position: relative;
+    transition: color var(--transition-fast);
+  }
+
+  .nav-link:hover {
+    color: var(--text-heading);
+  }
+
+  .nav-link.active {
+    color: var(--accent-gold);
+  }
+
+  .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--accent-gold);
+    border-radius: var(--radius-full);
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+  }
+
+  /* Hamburger Menu Button */
+  .mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .hamburger-line {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: var(--text-heading);
+    transition: transform var(--transition-base), opacity var(--transition-base);
+  }
+
+  .mobile-menu-btn.open .hamburger-line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .mobile-menu-btn.open .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mobile-menu-btn.open .hamburger-line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* Mobile Drawer */
+  .mobile-drawer {
+    display: none;
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    height: calc(100vh - var(--header-height));
+    background: rgba(9, 10, 13, 0.98);
+    backdrop-filter: blur(20px);
+    z-index: 999;
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform var(--transition-smooth), opacity var(--transition-smooth);
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .mobile-drawer.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .mobile-drawer-content {
+    padding: var(--space-8) var(--space-6);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+  }
+
+  .mobile-nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+  }
+
+  .mobile-nav-link {
+    font-size: var(--text-xl);
+    font-weight: 600;
+    color: var(--text-muted);
+    display: block;
+    padding: var(--space-2) 0;
+  }
+
+  .mobile-nav-link.active {
+    color: var(--accent-gold);
+  }
+
+  @media (max-width: 840px) {
+    .desktop-nav {
+      display: none;
+    }
+
+    .mobile-menu-btn {
+      display: flex;
+    }
+
+    .mobile-drawer {
+      display: block;
+    }
+  }
+</style>

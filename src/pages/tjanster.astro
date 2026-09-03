@@ -1,0 +1,196 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import ContactForm from '../components/ContactForm.astro';
+import { servicesData } from '../data/services';
+---
+
+<BaseLayout 
+  title="Tjänster & Kontakt – ZoMi Media"
+  description="Läs om våra AI-drivna mäklartjänster: Videorundturer från stillbilder, säsongsbyte från vinter till sommarsol och virtuell homestaging. Kontakta oss för en gratis testbild."
+>
+  <!-- Services Header -->
+  <section class="services-hero-section section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">
+          <span>Våra AI-Lösningar</span>
+        </div>
+        <h1 class="section-title">
+          Tjänster för moderna <span class="gradient-text">fastighetsmäklare</span>
+        </h1>
+        <p class="section-subtitle">
+          Upptäck hur vår AI förvandlar era befintliga mäklarbilder till slagkraftiga videorundturer och somriga drömmiljöer. Allt levereras färdigt inom 24–48 timmar.
+        </p>
+      </div>
+
+      <!-- Deep Dive Grid of Services -->
+      <div class="services-full-grid">
+        {servicesData.map((service, index) => (
+          <ServiceCard service={service} featured={index === 0} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section (3 Steps) -->
+  <ProcessSteps />
+
+  <!-- Format & Specifications Showcase -->
+  <section class="specs-section section">
+    <div class="container">
+      <div class="specs-grid glass-panel">
+        <div class="specs-content">
+          <div class="section-badge">
+            <span>Mäklaroptimerade Format</span>
+          </div>
+          <h2 class="specs-title">
+            Färdigt för Hemnet, Mäklarwebb &amp; Sociala Medier
+          </h2>
+          <p class="specs-desc">
+            Vi levererar alltid i rätt upplösningar och proportioner så att ni slipper redigera eller beskära själva.
+          </p>
+          <ul class="specs-list">
+            <li>
+              <strong>16:9 Widescreen (4K / 1080p):</strong> Perfekt integrerat i Hemnet, Boneo, Booli och ert eget mäklarsystem.
+            </li>
+            <li>
+              <strong>9:16 Vertikal Video (Reels &amp; TikTok):</strong> Anpassat för mobilflödet med maximal visuell genomslagskraft.
+            </li>
+            <li>
+              <strong>Högupplösta Före/Efter-bilder:</strong> Kristallklara stillbilder för tryckta prospekt och digitala bildgallerier.
+            </li>
+          </ul>
+        </div>
+        <div class="specs-visual">
+          <div class="format-badge-card">
+            <span class="f-title">16:9</span>
+            <span class="f-sub">Hemnet &amp; Webb</span>
+          </div>
+          <div class="format-badge-card f-vert">
+            <span class="f-title">9:16</span>
+            <span class="f-sub">Reels / TikTok</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section directly under services -->
+  <ContactForm />
+</BaseLayout>
+
+<style>
+  .services-hero-section {
+    padding-top: var(--space-12);
+  }
+
+  .services-full-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-8);
+  }
+
+  /* Specs Section */
+  .specs-section {
+    padding-top: var(--space-8);
+    padding-bottom: var(--space-8);
+  }
+
+  .specs-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: var(--space-10);
+    padding: var(--space-10) var(--space-12);
+    border-radius: var(--radius-xl);
+    align-items: center;
+  }
+
+  .specs-title {
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-4);
+    color: var(--text-heading);
+  }
+
+  .specs-desc {
+    font-size: var(--text-base);
+    color: var(--text-muted);
+    margin-bottom: var(--space-6);
+  }
+
+  .specs-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .specs-list li {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    line-height: 1.6;
+    padding-left: var(--space-4);
+    border-left: 2px solid var(--accent-gold);
+  }
+
+  .specs-list strong {
+    color: var(--text-heading);
+  }
+
+  .specs-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-4);
+  }
+
+  .format-badge-card {
+    background: rgba(14, 16, 22, 0.9);
+    border: 1px solid var(--border-medium);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8) var(--space-6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    aspect-ratio: 16 / 10;
+    width: 180px;
+    box-shadow: var(--shadow-md);
+  }
+
+  .format-badge-card.f-vert {
+    aspect-ratio: 9 / 16;
+    width: 120px;
+    border-color: rgba(229, 179, 100, 0.4);
+    background: rgba(24, 27, 35, 0.95);
+  }
+
+  .f-title {
+    font-size: var(--text-2xl);
+    font-weight: 800;
+    color: var(--accent-gold);
+  }
+
+  .f-sub {
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    margin-top: var(--space-1);
+  }
+
+  @media (max-width: 960px) {
+    .services-full-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .specs-grid {
+      grid-template-columns: 1fr;
+      padding: var(--space-6);
+    }
+
+    .specs-visual {
+      margin-top: var(--space-6);
+    }
+  }
+</style>
