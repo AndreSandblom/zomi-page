@@ -30,16 +30,16 @@ export const portfolioItems: PortfolioItem[] = [
   },
   {
     id: "villa-djursholm",
-    title: "Strandvilla – Djursholm",
+    title: "Sekelskifteshus – Skärgård & Sommar",
     category: "season",
     categoryLabel: "Säsongsbyte",
-    propertyType: "Villa, 7 rok / 280 kvm",
-    description: "Fotograferad i januari under grå snöslask. Förvandlades till en strålande midsommardag med blommande trädgård, blå himmel och glittrande pool.",
-    beforeImage: "/assets/images/villa-winter.svg",
-    afterImage: "/assets/images/villa-summer.svg",
+    propertyType: "Fritidshus / Villa",
+    description: "Fotograferad under snöig vinter. Förvandlades till en strålande sommardag med grönska, blommor och blå himmel.",
+    beforeImage: "/assets/images/season-change-after1.png",
+    afterImage: "/assets/images/season-change-before1.jpg",
     type: "season-slider",
     aspectRatio: "16/9",
-    tags: ["Snö till Sol", "Exteriör", "Pool & Trädgård", "Fasad"]
+    tags: ["Snö till Sol", "Exteriör", "Trädgård & Fasad", "Sommarsol"]
   },
   {
     id: "modern-kitchen",
@@ -57,29 +57,29 @@ export const portfolioItems: PortfolioItem[] = [
   },
   {
     id: "skargardshus-vaxholm",
-    title: "Skärgårdshus – Vaxholm",
+    title: "Strandvilla & Pool – Golden Hour",
     category: "season",
     categoryLabel: "Skymning / Golden Hour",
-    propertyType: "Fritidshus med brygga",
-    description: "Gråmulen eftermiddagsbild förvandlades till en stämningsfull skymningsvy med tända fönsterlampor och solnedgång över vattnet.",
-    beforeImage: "/assets/images/vaxholm-day.svg",
-    afterImage: "/assets/images/vaxholm-twilight.svg",
+    propertyType: "Exklusiv Villa vid Vattnet",
+    description: "Dagsljusbild förvandlades till en stämningsfull skymningsvy med gyllene solnedgångsglöd och upplyst pool.",
+    beforeImage: "/assets/images/golden-hour-before1.png",
+    afterImage: "/assets/images/golden-hour-after1.png",
     type: "season-slider",
     aspectRatio: "16/9",
-    tags: ["Skymningsljus", "Golden Hour", "Havsutsikt"]
+    tags: ["Skymningsljus", "Golden Hour", "Havsutsikt", "Pool"]
   },
   {
     id: "nyproduktion-vasastan",
-    title: "Nyproduktion – Vasastan",
+    title: "Våning med Träbjälkar – Homestyling",
     category: "staging",
     categoryLabel: "Virtuell Homestaging",
-    propertyType: "Nyproduktion, 3 rok / 84 kvm",
-    description: "Ett tomt, nymålat vardagsrum inreddes med modern skandinavisk soffgrupp, konst och belysning för att locka spekulanter.",
-    beforeImage: "/assets/images/empty-living.svg",
-    afterImage: "/assets/images/staged-living.svg",
+    propertyType: "Etagevåning, 4 rok / 115 kvm",
+    description: "Ett tomt rum med öppen trappa och träbjälkar inreddes digitalt med modern skandinavisk soffgrupp, matbord och belysning.",
+    beforeImage: "/assets/images/home-styling-before1.png",
+    afterImage: "/assets/images/home-styling-after1.png",
     type: "staging-comparison",
     aspectRatio: "16/9",
-    tags: ["Homestaging", "Nyproduktion", "Skandinavisk design"]
+    tags: ["Homestaging", "Träbjälkar", "Skandinavisk design"]
   },
   {
     id: "terrass-kungsholmen",

@@ -1,21 +1,25 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroCinematic from '../components/HeroCinematic.astro';
 import HeroTour from '../components/HeroTour.astro';
 import SeasonSlider from '../components/SeasonSlider.astro';
 import { servicesData } from '../data/services';
 ---
 
 <BaseLayout 
-  title="ZoMi Media – AI-videorundturer & Säsongsförvandling för Fastighetsmäklare"
-  description="Förvandla vanliga mäklarbilder till cinematiska AI-videorundturer och skapa magiska säsongsbyten från snö till sommarsol. 100% fotorealistiskt."
+  title="ZoMi Media – Filmiska Upplevelser av Platser"
+  description="Från stillbilder till platser som känns levande. Vi förvandlar professionella bilder av bostäder, hotell och miljöer till filmiska upplevelser och säsongsförvandlingar."
 >
-  <!-- 1. Huvudtjänst i fokus: Direkt AI-rundtur från stillbilder -->
+  <!-- 1. Mjuk filmisk Hero (vänsterjusterad text, stämningsfull bild till höger) -->
+  <HeroCinematic />
+
+  <!-- 2. Huvudtjänst i fokus: Interaktiv videorundtur från stillbilder -->
   <HeroTour />
 
-  <!-- 2. Nästa tjänst: Säsongsbyte & Miljöförvandling med interaktiv slider -->
+  <!-- 3. Nästa tjänst: Säsongsbyte & Miljöförvandling med interaktiv slider -->
   <SeasonSlider />
 
-  <!-- 3. Kort översikt av tjänster & Direktlänk till Tjänster / Kontakt -->
+  <!-- 4. Kort översikt av tjänster & Direktlänk till Tjänster / Kontakt -->
   <section class="home-services-teaser section">
     <div class="container">
       <div class="section-header">
@@ -26,7 +30,7 @@ import { servicesData } from '../data/services';
           Allt ni behöver för att <span class="gradient-text">dominera bostadsmarknaden</span>
         </h2>
         <p class="section-subtitle">
-          Ett komplett paket av AI-drivna medietjänster skapade specifikt för mäklare och fastighetsbyråer som vill spara tid och sälja snabbare.
+          Ett komplett paket av medietjänster skapade specifikt för mäklare och fastighetsbyråer som vill spara tid och sälja snabbare.
         </p>
       </div>
 
